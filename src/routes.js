@@ -19,8 +19,6 @@ const Progress = React.lazy(() => import('./views/base/progress/Progress'))
 const Spinners = React.lazy(() => import('./views/base/spinners/Spinners'))
 const Tables = React.lazy(() => import('./views/base/tables/Tables'))
 const Tooltips = React.lazy(() => import('./views/base/tooltips/Tooltips'))
-const AllUsers = React.lazy(() => import('./views/users/AllUsers/AllUsers'))
-const AddNewUsers = React.lazy(() => import('./views/users/AddNewUsers/AddNewUsers'))
 
 // Buttons
 const Buttons = React.lazy(() => import('./views/buttons/buttons/Buttons'))
@@ -97,8 +95,6 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', element: Modals },
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   { path: '/widgets', name: 'Widgets', element: Widgets },
-  { path: '/users/all-users', name: 'All Users', element: AllUsers },
-  { path: '/users/add-new-users', name: 'Add New Users', element: AddNewUsers },
 ]
 
 export default routes

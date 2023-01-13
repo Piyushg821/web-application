@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { storage, db } from 'src/firebase'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ref, getDownloadURL } from 'firebase/storage'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import {
   MDBBtn,
   MDBContainer,
@@ -24,7 +24,7 @@ const initialState = {
   games: '',
 }
 
-const AddNewUsers = () => {
+const AddEditUser = () => {
   const [data, setData] = useState(initialState)
   const { username, password, email, games } = data
   const [file, setFile] = useState()
@@ -50,13 +50,29 @@ const AddNewUsers = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    await addDoc(collection(db, 'users'), {
-      ...data,
-      timestamp: serverTimestamp(),
-    })
+    if (!id) {
+      try {
+        await addDoc(collection(db, 'users'), {
+          ...data,
+          timestamp: serverTimestamp(),
+        })
+      } catch (error) {
+        console.log(error)
+      }
+      alert('user added successfully')
+    } else {
+      try {
+        await updateDoc(doc(db, 'users', id), {
+          ...data,
+          timestamp: serverTimestamp(),
+        })
+      } catch (error) {
+        console.log(error)
+      }
+      alert('User updated successfully')
+    }
     console.log(data)
-    alert('user added successfully')
+
     navigate('/')
   }
 
@@ -102,7 +118,7 @@ const AddNewUsers = () => {
       <MDBRow className="justify-content-center align-items-center m-5">
         <MDBCard>
           <MDBCardBody className="px-4">
-            <h3 className="fw-bold mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <h3 className="fw-bold mb-4 pb-2 pb-md-0 mb-md-5">{id ? 'Update User' : 'Add User'}</h3>
 
             <form onSubmit={handleSubmit}>
               <MDBRow>
@@ -207,4 +223,4 @@ const AddNewUsers = () => {
   )
 }
 
-export default AddNewUsers
+export default AddEditUser

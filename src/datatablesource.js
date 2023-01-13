@@ -1,10 +1,10 @@
 import React from 'react'
 export const userColumns = [
-  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'id', headerName: 'ID', width: 200 },
   {
     field: 'user',
     headerName: 'User',
-    width: 180,
+    width: 200,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">

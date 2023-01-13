@@ -1,6 +1,5 @@
 import React from 'react'
-import 'src/views/users/AddNewUsers/AddNewUsers'
-import './datatable.scss'
+import './AllUsers.scss'
 import { DataGrid } from '@mui/x-data-grid'
 import { userColumns, userRows } from 'src/datatablesource'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -50,6 +49,9 @@ const AllUsers = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
+            <div className="viewButton" onClick={() => navigate(`/update/${params.id}`)}>
+              Edit
+            </div>
             <div className="deleteButton" onClick={() => handleDelete(params.row.id)}>
               Delete
             </div>

@@ -60,13 +60,13 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'All Users',
-        to: '/users/all-users',
+        name: 'Add Users',
+        to: '/add',
       },
       {
         component: CNavItem,
-        name: 'Add Users',
-        to: '/users/add-new-users',
+        name: 'All Users',
+        to: '/all',
       },
     ],
   },
