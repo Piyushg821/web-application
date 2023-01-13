@@ -80,8 +80,8 @@ const Register = () => {
                   </CInputGroup>
 
                   <div className="d-grid">
-                    <CButton type="submit" onClick={addData} color="success">
-                      Create
+                    <CButton type="submit" onClick={addData} color="secondary">
+                      Create Account
                     </CButton>
                   </div>
                 </CForm>

@@ -211,6 +211,7 @@ const AddEditUser = () => {
                 className="mb-4"
                 size="lg"
                 type="submit"
+                color="dark"
                 disabled={progress !== null && progress < 100}
               >
                 Submit
