@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700;1,900&family=Poppins:ital,wght@0,900;1,900&display=swap');
+
+
+body {
+    background-color: #8fc4b7;
+  }
+  .btn {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    left: 100px;
+    border: none;
+    text-align: center;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+    .btn:disabled{
+      background-color: white;
+      cursor: not-allowed;
+    }
+    
+  
